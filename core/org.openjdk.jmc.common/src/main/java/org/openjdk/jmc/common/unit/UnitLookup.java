@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2018, 2021, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2021, Datadog, Inc. All rights reserved.
  *
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -48,6 +49,9 @@ import static org.openjdk.jmc.common.unit.DecimalPrefix.YOTTA;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -524,6 +528,14 @@ final public class UnitLookup {
 	}
 
 	private static TimestampKind createTimestamp(LinearKindOfQuantity timespan) {
+
+		// equivalent to old code
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yy, h:mm:ss.SSS a\n");
+
+		// what about micros, nanos ?
+		DateTimeFormatter formatter = new DateTimeFormatterBuilder().appendInstant(3).toFormatter();
+//		return formatter.format(valueInMs);
+
 		TimestampKind timestampContentType = TimestampKind.buildContentType(timespan);
 		timestampContentType
 				.addFormatter(new DisplayFormatter<IQuantity>(timestampContentType, IDisplayable.AUTO, "Dynamic") {
@@ -531,10 +543,9 @@ final public class UnitLookup {
 					public String format(IQuantity quantity) {
 						try {
 							// NOTE: This used to return the floor value.
-							Date date = new Date(quantity.longValueIn(TimestampKind.MILLIS_UNIT));
-							DateFormat df = patchTimestamp(
-									DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM));
-							return df.format(date);
+							Instant ts = Instant.ofEpochMilli(quantity.longValueIn(TimestampKind.MILLIS_UNIT));
+//							return formatter.format(ts.atZone(ZoneOffset.UTC));
+							return formatter.format(ts);
 						} catch (QuantityConversionException e) {
 							return Messages.getString(Messages.UnitLookup_TIMESTAMP_OUT_OF_RANGE);
 						}
