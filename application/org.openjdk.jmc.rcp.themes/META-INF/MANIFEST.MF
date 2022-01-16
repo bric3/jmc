@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Name: Themes for JMC
+Bundle-SymbolicName: org.openjdk.jmc.rcp.themes;singleton:=true
+Bundle-Version: 8.2.0.qualifier
+Require-Bundle: org.eclipse.e4.ui.css.swt.theme
+Bundle-Vendor: Oracle Corporation
+Bundle-Localization: plugin
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.openjdk.jmc.rcp.themes
