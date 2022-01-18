@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jdp.test" />
+        <module name="flightrecorder.test" />
+        <module name="agent" />
+        <module name="flightrecorder.rules" />
+        <module name="flightrecorder.rules.test" />
+        <module name="common.test" />
+        <module name="flightrecorder.writer" />
+        <module name="flightrecorder.serializers" />
+        <module name="flightrecorder.serializers.test" />
+        <module name="flightrecorder" />
+        <module name="common" />
+        <module name="flightrecorder.rules.jdk.test" />
+        <module name="jdp" />
+        <module name="flightrecorder.writer.test" />
+        <module name="flightrecorder.rules.jdk" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="agent" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="common.test" target="1.8" />
+      <module name="flightrecorder" target="1.8" />
+      <module name="flightrecorder.rules" target="1.8" />
+      <module name="flightrecorder.rules.jdk" target="1.8" />
+      <module name="flightrecorder.rules.jdk.test" target="1.8" />
+      <module name="flightrecorder.rules.test" target="1.8" />
+      <module name="flightrecorder.serializers" target="1.8" />
+      <module name="flightrecorder.serializers.test" target="1.8" />
+      <module name="flightrecorder.test" target="1.8" />
+      <module name="flightrecorder.writer" target="1.8" />
+      <module name="flightrecorder.writer.test" target="1.8" />
+      <module name="jdp" target="1.8" />
+      <module name="jdp.test" target="1.8" />
+      <module name="missioncontrol.core" target="1.8" />
+      <module name="missioncontrol.core.tests" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="EclipseCompilerSettings">
+    <option name="GENERATE_NO_WARNINGS" value="true" />
+    <option name="DEPRECATION" value="false" />
+  </component>
+</project>

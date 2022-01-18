@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="JMC_JDK">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.asdf/installs/java/corretto-8.322.06.1/lib/jconsole.jar!/" />
+      <root url="jar://$USER_HOME$/.asdf/installs/java/corretto-8.322.06.1/lib/tools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.asdf/installs/java/corretto-8.322.06.1/lib/tools.jar!/" />
+    </SOURCES>
+  </library>
+</component>
